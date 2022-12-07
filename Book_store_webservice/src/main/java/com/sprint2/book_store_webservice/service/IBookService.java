@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IBookService {
     List<Book> findAll();
+    List<Book> findBookByTitleContains(String Title);
 }

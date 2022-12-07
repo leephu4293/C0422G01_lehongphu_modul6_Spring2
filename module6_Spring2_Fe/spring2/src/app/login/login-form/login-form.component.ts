@@ -3,6 +3,7 @@ import {FormControl, FormGroup, FormsModule} from "@angular/forms";
 import {Subscription} from "rxjs";
 import {LoginserviceService} from "../service/loginservice.service";
 import {Router} from "@angular/router";
+import {TokenService} from "../service/token.service";
 
 @Component({
   selector: 'app-login-form',
@@ -15,7 +16,8 @@ export class LoginFormComponent implements OnInit {
   subscription: Subscription;
 
 
-  constructor(private loginService : LoginserviceService, private router: Router) { }
+  constructor(private loginService : LoginserviceService, private router: Router,
+              private tokenService: TokenService) { }
 
   ngOnInit(): void {
     this.loginForm= new FormGroup({
@@ -30,6 +32,7 @@ export class LoginFormComponent implements OnInit {
     let loginRequest = this.loginForm.value;
     this.loginService.login(loginRequest).subscribe(loginResponse=>{
       console.log(loginResponse)
+      this.tokenService.saveSessionStorage(loginResponse);
        this.router.navigateByUrl("");
     })
 

@@ -1,0 +1,53 @@
+<div class="container-fluid">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="border-top: 1px solid silver;border-bottom:1px solid silver ;padding: 7px 100px">
+  <div class="container-fluid">
+    <a class="navbar-brand m-0 p-2 " style="font-size: 15px" href="#">NEW</a><span class="p-2 m-0">|</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active p-2 m-0 " style="font-size: 15px" aria-current="page" href="#"> COMING SOON <span class="p-2 m-0">|</span></a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link active p-2 m-0 " style="font-size: 15px" aria-current="page" href="/list">BOOK <span class="p-2 m-0">|</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active p-2 m-0" style="font-size: 15px" aria-current="page" href="#">MORE <span class="p-2 m-0">|</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active p-2 m-0" style="font-size: 15px" aria-current="page" href="#">GIFT <span class="p-2 m-0">|</span></a>
+        </li>
+
+
+
+      </ul>
+      <form class="d-flex" *ngIf="searchForm" [formGroup]="searchForm"  (ngSubmit)="search()">
+        <input class="form-control me-2" formControlName="name" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+      <div class="m-2 d-flex justify-content-end">
+        <a href="/cart"><i style="font-size: 30px; color: #085C41" class="fa-solid fa-basket-shopping"></i> </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="row m-5 p-2">
+  <div class="card" style="width: 25%" *ngFor="let l of list">
+    <img src="{{l.imageUrl}}" class="card-img-top m-1" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{l.title}}</h5>
+      <p class="card-text">Giá bán:{{l.price}}đ</p>
+      <p><a href="#" class="btn btn-success text-white px-4 w-100">Chi tiết sách</a></p>
+      <p><a href="#" class="btn btn-success text-white px-4 w-100">Thêm vào giỏ hàng</a></p>
+    </div>
+  </div>
+</div>
+
+
+</div>

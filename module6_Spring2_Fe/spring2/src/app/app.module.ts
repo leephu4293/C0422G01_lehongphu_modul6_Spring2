@@ -8,12 +8,16 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {LoginModule} from "./login/login.module";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { DetailsComponent } from './details/details.component';
+import { CartBookComponent } from './cart-book/cart-book.component';
+import { ListBookComponent } from './list-book/list-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeBookComponent,
     DetailsComponent,
+    CartBookComponent,
+    ListBookComponent,
   ],
   imports: [
     BrowserModule,

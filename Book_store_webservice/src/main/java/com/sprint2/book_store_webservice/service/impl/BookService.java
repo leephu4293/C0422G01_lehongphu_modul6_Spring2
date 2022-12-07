@@ -17,4 +17,11 @@ public class BookService  implements IBookService {
     public List<Book> findAll() {
         return this.bookRepository.findAll();
     }
+
+    @Override
+    public List<Book> findBookByTitleContains(String title) {
+        return this.bookRepository.findBookByTitleContains(title);
+    }
+
+
 }
